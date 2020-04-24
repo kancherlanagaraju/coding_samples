@@ -1,0 +1,20 @@
+# Given a array of n integer
+#print the last two digits of the product of the array values
+
+print("Length of the array")
+n = int(input())
+
+print("Enter Array elements Input separated by spaces")
+numbers = list(map(int, input().rstrip().split()))
+
+if n != len(numbers):
+	print("Wrong input!")
+
+last_two_digits = 1
+for num in numbers:
+    last_two_digits = (last_two_digits * num) % 100
+	# If any number in input is zero, skip as the result would always be zero
+    if(last_two_digits==0): 
+    	break
+  
+print(last_two_digits)
